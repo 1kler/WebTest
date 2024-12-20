@@ -1,0 +1,73 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;  /* Light gray background */
+    color: #212121;  /* Dark text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Heading */
+h2 {
+    color: #6200ea;  /* Primary color */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Movie List Styles */
+ul {
+    padding: 0;
+    list-style: none;  /* Remove default list bullets */
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+li {
+    background-color: #fff;  /* White background for list items */
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #6200ea;
+    cursor: pointer;  /* Make it look clickable */
+    transition: background-color 0.3s, transform 0.2s;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect for list items */
+li:hover {
+    background-color: #6200ea;
+    color: white;
+    transform: scale(1.05);  /* Slightly increase size on hover */
+}
+
+/* X icon styling */
+li .delete-btn {
+    color: red;  /* Red color for the "X" icon */
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* Hover effect for "X" icon */
+li .delete-btn:hover {
+    color: #ff4081;  /* Accent color for hover effect */
+}
+
+/* Add new movie link */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #03dac6;  /* Secondary mint green color */
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #a6f1e9;  /* Change to primary color on hover */
+}

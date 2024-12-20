@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Movie Details</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/details.css}">
+</head>
+<body>
+
+<h2>Movie Details</h2>
+
+<!-- Form to update the rating -->
+<form th:action="@{/movies/updateRating/{id}(id=${movie.id})}" method="post">
+  <dl>
+    <dt>Title:</dt>
+    <dd th:text="${movie.title}"></dd><br>
+
+    <dt>Description:</dt>
+    <dd th:text="${movie.description}"></dd><br>
+
+    <dt>Release Year:</dt>
+    <dd th:text="${movie.releaseYear}"></dd><br>
+
+    <dt>Genre:</dt>
+    <dd th:text="${movie.genre}"></dd><br>
+
+    <dt>Rating:</dt>
+    <dd>
+      <span th:text="${#strings.repeat('★', movie.rating)}"></span> <!-- Display stars based on current rating -->
+    </dd><br>
+
+    <!-- Rating Dropdown for updating -->
+    <label for="rating">Update Rating:</label>
+    <select id="rating" name="rating" th:field="*{movie.rating}" required>
+      <option value="1" th:selected="${movie.rating == 1}">1</option>
+      <option value="2" th:selected="${movie.rating == 2}">2</option>
+      <option value="3" th:selected="${movie.rating == 3}">3</option>
+      <option value="4" th:selected="${movie.rating == 4}">4</option>
+      <option value="5" th:selected="${movie.rating == 5}">5</option>
+    </select><br>
+
+    <!-- Submit button to save the rating -->
+    <button type="submit">Save Rating</button>
+  </dl>
+</form>
+
+<a th:href="@{/movies/list(rating=${selectedRating})}">Back to List</a>
+
+</body>
+</html>
